@@ -1,31 +1,5 @@
-## 🥊 Полный код вашего сайта TAJ WARRIOR MMA
 
-### **1. App.js (Главный файл React)**
-```javascript
-import React, { useState } from "react";
-import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Button } from "./components/ui/button";
-import { Card, CardContent } from "./components/ui/card";
-import { Badge } from "./components/ui/badge";
-import { PlayCircle, Users, Wifi, Send } from "lucide-react";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-
-const StreamPlayer = ({ streamUrl, title, isLive }) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const handlePlay = () => {
-    setIsPlaying(true);
-  };
-
-  const handleTelegramClick = () => {
-    window.open('https://t.me/tajwarrior', '_blank');
-  };
-
-  if (!isPlaying) {
-    return (
-      <Card className="group hover:scale-105 transition-all duration-300 bg-gray-900 border-gray-700 overflow-hidden">
+<Card className="group hover:scale-105 transition-all duration-300 bg-gray-900 border-gray-700 overflow-hidden">
         <div className="relative aspect-video bg-gray-800">
           <div className="absolute inset-0 bg-gradient-to-br from-red-900/50 to-black/80 flex items-center justify-center">
             <Button
@@ -108,27 +82,7 @@ const StreamPlayer = ({ streamUrl, title, isLive }) => {
   );
 };
 
-const Home = () => {
-  const streams = [
-    {
-      id: 1,
-      title: "Главный Ринг",
-      streamUrl: "ЗДЕСЬ_ВСТАВЬТЕ_ВАШУ_ССЫЛКУ_НА_СТРИМ_1",
-      isLive: true
-    },
-    {
-      id: 2,
-      title: "Второй Ринг", 
-      streamUrl: "ЗДЕСЬ_ВСТАВЬТЕ_ВАШУ_ССЫЛКУ_НА_СТРИМ_2",
-      isLive: true
-    },
-    {
-      id: 3,
-      title: "Тренировочный Зал",
-      streamUrl: "ЗДЕСЬ_ВСТАВЬТЕ_ВАШУ_ССЫЛКУ_НА_СТРИМ_3",
-      isLive: false
-    }
-  ];
+
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -258,42 +212,3 @@ body {
 
 @keyframes telegramPulse {
   0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
-  }
-  50% {
-    transform: scale(1.02);
-    box-shadow: 0 0 25px rgba(37, 99, 235, 0.7);
-  }
-}
-
-/* Responsive video containers */
-.aspect-video {
-  aspect-ratio: 16 / 9;
-}
-
-/* Responsive design */
-@media (max-width: 1024px) {
-  .cinematic-text {
-    font-size: 3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .cinematic-text {
-    font-size: 2rem;
-  }
-}
-```
-
-## 📝 **Инструкции для настройки:**
-
-1. **Замените ссылки на стримы** в App.js на строках 110, 116, 122:
-   - Вместо `"ЗДЕСЬ_ВСТАВЬТЕ_ВАШУ_ССЫЛКУ_НА_СТРИМ_1"` 
-   - Поставьте реальные ссылки YouTube Live, Twitch или другие
-
-2. **Telegram канал уже настроен** на `https://t.me/tajwarrior`
-
-3. **Кнопки работают** под каждым стримом
-
-Сохраните эти файлы и ваш сайт готов! 🥊🚀
