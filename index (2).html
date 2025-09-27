@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TAJ WARRIOR</title>
+  <meta name="description" content="Дар шабакаи мо шумо метавонед рақобатҳо, хабарҳо ва натиҷаи рақобатҳо, пахши мустақим — ин ҳама дар як канали мо. Хуш омадед!" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #0a051f, #1a123a, #0d0820);
+      color: white; min-height: 100vh; padding: 20px;
+    }
+    .container { max-width: 1000px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 40px; padding: 20px 0; }
+    h1 { font-size: 2.4rem; font-weight: 800; margin-bottom: 16px; color: #ffcc00; text-shadow: 0 0 10px rgba(255, 204, 0, 0.5); }
+    .subtitle { font-size: 1.1rem; line-height: 1.6; max-width: 700px; margin: 0 auto; color: #e0d6ff; }
+    .streams { display: grid; gap: 36px; }
+    .stream-card { background: rgba(10, 5, 30, 0.6); border-radius: 14px; overflow: hidden; border: 1px solid rgba(100, 80, 200, 0.2); backdrop-filter: blur(6px); }
+    .video-wrapper { position: relative; width: 100%; height: 0; padding-bottom: 56.25%; }
+    .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    .stream-info { padding: 20px; }
+    .stream-title { font-size: 1.4rem; margin-bottom: 10px; color: #ffcc00; font-weight: 700; }
+    .stream-desc { color: #c5b8ff; margin-bottom: 20px; line-height: 1.5; font-size: 0.95rem; }
+    .telegram-btn { display: block; width: 100%; background: #2a9dd9; color: white; text-align: center; padding: 14px; border-radius: 10px; font-weight: 600; font-size: 1.05rem; text-decoration: none; transition: background 0.3s, transform 0.2s; }
+    .telegram-btn:hover { background: #3ab0ff; transform: translateY(-2px); }
+    footer { text-align: center; margin-top: 50px; color: #aaa; font-size: 0.9rem; }
+    @media (max-width: 600px) { h1 { font-size: 1.8rem; } .stream-title { font-size: 1.2rem; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>TAJ WARRIOR</h1>
+      <p class="subtitle">
+        ДАР ШАБАКАИ МО ШУМО МЕТАВОНЕД РАҚОБАТҲО ХАБАР ҲО ВА НАТИҶАИ РАҚОБАТҲО ПАХШИ МУСТАҚИМ ИН ҲАМА ДАР ЯК КАНАЛИ МО ХУШОМАДЕД
+      </p>
+    </header>
+    <div class="streams">
+      <div class="stream-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0&mute=1" allowfullscreen></iframe></div>
+        <div class="stream-info"><h2 class="stream-title">🔴 ПОТОК 1 — ПАХШИ МУСТАҚИМ</h2><p class="stream-desc">Рақобатҳои зиндаи MMA...</p><a href="https://t.me/tajwarrior" target="_blank" class="telegram-btn">ҲАМРОҲ ШАВЕД ДАР TELEGRAM</a></div>
+      </div>
+      <div class="stream-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/9bZkp7q19f0?autoplay=0&mute=1" allowfullscreen></iframe></div>
+        <div class="stream-info"><h2 class="stream-title">📰 ПОТОК 2 — ХАБАРҲО ВА ЭЪЛОНҲО</h2><p class="stream-desc">Хабарҳои охирин...</p><a href="https://t.me/tajwarrior" target="_blank" class="telegram-btn">ҲАМРОҲ ШАВЕД ДАР TELEGRAM</a></div>
+      </div>
+      <div class="stream-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/J---aiyznGQ?autoplay=0&mute=1" allowfullscreen></iframe></div>
+        <div class="stream-info"><h2 class="stream-title">🥇 ПОТОК 3 — НАТИҶАҲО ВА ТАҲЛИЛ</h2><p class="stream-desc">Натиҷаҳои рақобатҳо...</p><a href="https://t.me/tajwarrior" target="_blank" class="telegram-btn">ҲАМРОҲ ШАВЕД ДАР TELEGRAM</a></div>
+      </div>
+    </div>
+    <footer><p>© 2025 TAJ WARRIOR — Ҳамаи пахшҳо дар Telegram: <a href="https://t.me/tajwarrior" style="color:#ffcc00;">@tajwarrior</a></p></footer>
+  </div>
+</body>
+</html>
