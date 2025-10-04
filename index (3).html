@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TAJ WARRIOR — Live</title>
+  <meta name="description" content="TAJ WARRIOR — Прямые трансляции MMA. Подключайся в Telegram для обновлений."/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#050006;
+      --bg2:#0d0214;
+      --accent:#ff3b30;
+      --accent2:#ff8a00;
+      --glass: rgba(255,255,255,0.04);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body,#root{height:100%}
+    body{
+      font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(255,59,48,0.06), transparent),
+                  radial-gradient(900px 400px at 90% 80%, rgba(255,138,0,0.05), transparent),
+                  linear-gradient(180deg,var(--bg1),var(--bg2));
+      color:#fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .card{
+      width:100%;
+      max-width:980px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+      border-radius:18px;
+      padding:28px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      position:relative;
+      overflow:hidden;
+      backdrop-filter: blur(6px) saturate(1.1);
+    }
+
+    /* Neon glow header */
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:18px;
+      justify-content:center;
+    }
+    .logo{
+      width:64px;height:64px;border-radius:12px;
+      background: linear-gradient(135deg,var(--accent),var(--accent2));
+      display:flex;align-items:center;justify-content:center;
+      font-family:Orbitron, monospace;
+      font-weight:700;color:#100;box-shadow:0 6px 20px rgba(255,59,48,0.18);
+    }
+    .title{
+      text-align:center;
+    }
+    .title h1{
+      font-family:Orbitron, monospace;
+      font-weight:900;
+      font-size:28px;
+      letter-spacing:2px;
+      background: linear-gradient(90deg,var(--accent),var(--accent2));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      text-shadow: 0 6px 18px rgba(255,59,48,0.08);
+    }
+    .title p{color:rgba(255,255,255,0.7);font-size:13px;margin-top:6px}
+
+    /* video container */
+    .player-wrap{
+      margin-top:18px;
+      background:var(--glass);
+      border-radius:12px;
+      padding:10px;
+      border:1px solid rgba(255,255,255,0.03);
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .video-frame{
+      position:relative;
+      width:100%;
+      padding-top:56.25%;
+      border-radius:10px;
+      overflow:hidden;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+      background:linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.4));
+      transition: transform .25s ease;
+    }
+    .video-frame iframe{position:absolute;left:0;top:0;width:100%;height:100%;border:0}
+
+    .video-frame:hover{transform:translateY(-4px)}
+
+    /* controls row */
+    .controls{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+      margin-top:6px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:600;
+      cursor:pointer;
+      text-decoration:none;
+      transition: transform .14s ease, box-shadow .14s ease;
+      border:1px solid rgba(255,255,255,0.04);
+    }
+    .btn:active{transform:translateY(1px)}
+
+    .btn-telegram{
+      background: linear-gradient(90deg,#1da1f2 0%, #0d8bd8 100%);
+      color:white;
+      box-shadow: 0 8px 30px rgba(13,139,216,0.18), 0 2px 6px rgba(0,0,0,0.4);
+    }
+
+    .btn-glow{
+      background: linear-gradient(90deg, rgba(255,59,48,0.14), rgba(255,138,0,0.12));
+      color: #fff;
+      box-shadow: 0 10px 40px rgba(255,59,48,0.08), inset 0 -4px 18px rgba(0,0,0,0.35);
+    }
+
+    /* small info */
+    .meta{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      margin-top:8px;
+      color:rgba(255,255,255,0.7);
+      font-size:13px;
+    }
+
+    /* sparkle */
+    .sparkle{
+      position:absolute;
+      pointer-events:none;
+      inset:0;
+      background-image: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.03), transparent 10%),
+                        radial-gradient(circle at 80% 80%, rgba(255,138,0,0.02), transparent 12%);
+      mix-blend-mode: screen;
+    }
+
+    @media (max-width:720px){
+      body{padding:18px}
+      .card{padding:18px}
+      .title h1{font-size:20px}
+    }
+  </style>
+</head>
+<body>
+  <div class="card" role="main">
+    <div class="sparkle" aria-hidden="true"></div>
+
+    <div class="brand">
+      <div class="logo">TW</div>
+      <div class="title">
+        <h1>TAJ WARRIOR</h1>
+        <p>Классический стиль — современное сияние. Прямой эфир для фанатов MMA.</p>
+      </div>
+    </div>
+
+    <div class="player-wrap" aria-label="Video player">
+      <div class="video-frame" id="videoFrame">
+        <!-- Random YouTube video (change id to any other) -->
+        <iframe id="ytplayer"
+          src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&autoplay=0&modestbranding=1&showinfo=0"
+          title="Live stream"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="controls" role="toolbar" aria-label="Controls">
+        <a class="btn btn-glow" href="#" id="watchLiveBtn" onclick="openLive()">Смотреть сейчас</a>
+        <a class="btn btn-telegram" href="https://t.me/tajwarrior" target="_blank" rel="noopener" id="tgBtn">Подписаться в Telegram</a>
+      </div>
+
+      <div class="meta" aria-hidden="false">
+        <div>🔴 LIVE</div>
+        <div>👥 ~12,000 viewers</div>
+        <div>📺 YouTube</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Простая функция для открытия видео в новой вкладке (можно убрать autoplay)
+    function openLive(){
+      const iframe = document.getElementById('ytplayer');
+      // текущая src уже встраивает видео; просто фокусируемся или открываем в новой вкладке
+      window.open(iframe.src, '_blank', 'noopener');
+    }
+
+    // Немного sparkle анимации (мягко меняем opacity)
+    (function sparkleLoop(){
+      const s = document.querySelector('.sparkle');
+      let t = 0;
+      setInterval(()=>{
+        t+=0.02;
+        s.style.opacity = 0.7 + Math.sin(t)*0.12;
+      }, 60);
+    })();
+  </script>
+</body>
+</html>
